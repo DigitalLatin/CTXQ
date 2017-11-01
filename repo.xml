@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<meta xmlns="http://exist-db.org/xquery/repo">
+    <description>Renders TEI documents in HTML Custom Elements.</description>
+    <author>Hugh Cayless</author>
+    <website>http://philomousos.com</website>
+    <status>alpha</status>
+    <license>GNU-LGPL</license>
+    <copyright>true</copyright>
+    <type>application</type>
+    <target>CETEIcean-XQ</target>
+    <prepare>pre-install.xql</prepare>
+    <finish/>
+    <permissions user="DLL" group="DLL" mode="rw-rw-r--"/>
+<deployed>2017-09-22T10:18:36.94-04:00</deployed>
+</meta>
