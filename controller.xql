@@ -28,6 +28,17 @@ else if (starts-with($exist:path, "/toc/")) then
             <add-parameter name="doc" value="{$doc}"/>
         </forward>
     </dispatch>
+else if (starts-with($exist:path, "/rw/")) then
+    let $path := substring-after($exist:path, "/rw/")
+    let $collection := substring-before($path, "/d/")
+    let $doc := substring-before(substring-after($path, "/d/"), "/")
+    return
+    <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+        <forward url="{$exist:controller}/modules/rewrite-links.xql">
+            <add-parameter name="collection" value="{$collection}"/>
+            <add-parameter name="doc" value="{$doc}"/>
+        </forward>
+    </dispatch>
 else if (starts-with($exist:path, "/ce/")) then
     (: URL like /apps/CTXQ/ce/<collection>/d/<document_id>/i/<node_id> :)
     let $path := substring-after($exist:path, "/ce/")

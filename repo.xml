@@ -7,9 +7,9 @@
     <license>GNU-LGPL</license>
     <copyright>true</copyright>
     <type>application</type>
-    <target>CETEIcean-XQ</target>
+    <target>CTXQ</target>
     <prepare>pre-install.xql</prepare>
     <finish/>
-    <permissions user="DLL" group="DLL" mode="rw-rw-r--"/>
-<deployed>2017-09-22T10:18:36.94-04:00</deployed>
+    <permissions xmlns:repo="http://exist-db.org/xquery/repo" password="" user="DLL" group="DLL" mode="rw-rw-r--"/>
+
 </meta>
