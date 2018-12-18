@@ -24,6 +24,9 @@ declare function t:make-ceteicean($node as node(), $wrap as xs:boolean) as node(
                     attribute data-template-with {"templates/page.html"},
                     attribute data-template-at {"content"})
                 else (),
+                if (not($node/node())) then
+                    attribute data-empty {"true"}
+                else (),
                 for $attr in $node/@*
                 return t:make-ceteicean($attr),
                 for $child in $node/node()
@@ -89,7 +92,7 @@ let $map := map:merge(for $id in doc(concat("/db/",$collection,"/",$document,".x
 
 for $xml in doc(concat("/db/",$collection,"/",$document,".xml"))
 let $script := <script type="text/javascript">
-    var els = ["{string-join(distinct-values($xml//*/local-name()), '","')}"];
+    var els = ["{string-join(distinct-values($xml//*/concat('tei:',local-name())), '","')}"];
 </script>
 let $doc := t:rewrite-links($xml, $map)
 let $result := if ($part = "none") then
